@@ -1,9 +1,11 @@
 # 2615. Sum of Distances
 
-# Problem: You are given a 0-indexed integer array nums. There exists an array arr of length nums.length, where arr[i] is the sum of |i - j| over all j such that nums[j] == nums[i] and j != i. If there is no such j, set arr[i] to be 0.
+# Problem Summary: 
+You are given a 0-indexed integer array nums. There exists an array arr of length nums.length, where arr[i] is the sum of |i - j| over all j such that nums[j] == nums[i] and j != i. If there is no such j, set arr[i] to be 0.
 Return the array arr.
 
-# Approach One: The idea is to group all indices having the same value in nums. For each group, we compute the distance of every index using prefix sums by separating contributions from indices on the left side and right side. Initially all indices are considered part of the right side and their sum is stored in rightSum, while leftSum starts from 0. As we iterate through the indices from left to right, the current index is moved from the right side to the left. For distance calculation, the current index is multiplied by the number of indices on the left and the leftSum value is subtracted from it to calculate the total contribution from the left side. Similarly, the current index is multiplied by the number of indices on the right and is subtracted from the rightSum value to compute the contribution from the right side. The sum of these two contributions gives the total distance for the current index. 
+# Approach One: 
+The idea is to group all indices having the same value in nums. For each group, we compute the distance of every index using prefix sums by separating contributions from indices on the left side and right side. Initially all indices are considered part of the right side and their sum is stored in rightSum, while leftSum starts from 0. As we iterate through the indices from left to right, the current index is moved from the right side to the left. For distance calculation, the current index is multiplied by the number of indices on the left and the leftSum value is subtracted from it to calculate the total contribution from the left side. Similarly, the current index is multiplied by the number of indices on the right and is subtracted from the rightSum value to compute the contribution from the right side. The sum of these two contributions gives the total distance for the current index. 
 
 # Steps:
 1) Store the length of the array
@@ -85,7 +87,8 @@ S(n) = O(1) + O(n) + O(n) + O(n) + O(1) + O(1) + O(1) + O(1)
      = O(3n) // Ignore smaller constant term
      = O(n) // Drop constant multiplier
 
-# Approach Two: The solution uses a hashmap where each number stores a helper object containing leftSum, rightSum, leftCount, and rightCount. Initially, all occurrences of a number are treated as being on the right side, so their indices are added to the rightSum and their count is stored in the rightCount. Then the array is traversed from left to right. For each index, the total distance is calculated using contributions from already processed indices on the left side and remaining indices on the right side. After calculating the answer for the current index, it is moved from the right side to the left side by updating the sums and counts. 
+# Approach Two: 
+The solution uses a hashmap where each number stores a helper object containing leftSum, rightSum, leftCount, and rightCount. Initially, all occurrences of a number are treated as being on the right side, so their indices are added to the rightSum and their count is stored in the rightCount. Then the array is traversed from left to right. For each index, the total distance is calculated using contributions from already processed indices on the left side and remaining indices on the right side. After calculating the answer for the current index, it is moved from the right side to the left side by updating the sums and counts. 
 
 # Steps:
 1) Store the length of the array
