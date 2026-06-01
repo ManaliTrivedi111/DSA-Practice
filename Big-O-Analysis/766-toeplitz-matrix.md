@@ -1,8 +1,10 @@
 # 766. Toeplitz Matrix
 
-# Problem Summary: Given an m x n matrix, return true if the matrix is Toeplitz. Otherwise, return false. A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same elements.
+# Problem Summary: 
+Given an m x n matrix, return true if the matrix is Toeplitz. Otherwise, return false. A matrix is Toeplitz if every diagonal from top-left to bottom-right has the same elements.
 
-# Approach Used: The solution checks whether every element matches the element diagonally above-left to it. Since the first row and first column do not have any top-left diagonal element, the traversal starts from index 1 for both rows and columns. If any mismatch is found, the method immediately returns false. Otherwise, after checking the entire matrix, it returns true.
+# Approach Used: 
+The solution checks whether every element matches the element diagonally above-left to it. Since the first row and first column do not have any top-left diagonal element, the traversal starts from index 1 for both rows and columns. If any mismatch is found, the method immediately returns false. Otherwise, after checking the entire matrix, it returns true.
 
 # Steps:
 1) Store the number of rows and columns
