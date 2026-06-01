@@ -1,8 +1,10 @@
 # 832. Flipping an Image
 
-# Problem Summary: Given an n x n binary matrix image, flip the image horizontally, then invert it, and return the resulting image. To flip an image horizontally means that each row of the image is reversed. For example, flipping [1,1,0] horizontally results in [0,1,1]. To invert an image means that each 0 is replaced by 1, and each 1 is replaced by 0. For example, inverting [0,1,1] results in [1,0,0].
+# Problem Summary: 
+Given an n x n binary matrix image, flip the image horizontally, then invert it, and return the resulting image. To flip an image horizontally means that each row of the image is reversed. For example, flipping [1,1,0] horizontally results in [0,1,1]. To invert an image means that each 0 is replaced by 1, and each 1 is replaced by 0. For example, inverting [0,1,1] results in [1,0,0].
 
-# Approach Used: The solution processes each row independently using the two-pointer technique. One pointer starts from the beginning of the row and the other starts from the end. While swapping the elements to flip the row horizontally, the values are also inverted at the same time using XOR with 1. If both pointers meet at the middle element, only inversion is performed because no swapping is needed. This allows flipping and inverting to be completed together in a single traversal of each row.
+# Approach Used: 
+The solution processes each row independently using the two-pointer technique. One pointer starts from the beginning of the row and the other starts from the end. While swapping the elements to flip the row horizontally, the values are also inverted at the same time using XOR with 1. If both pointers meet at the middle element, only inversion is performed because no swapping is needed. This allows flipping and inverting to be completed together in a single traversal of each row.
 
 # Steps:
 1) Store the size of the matrix
