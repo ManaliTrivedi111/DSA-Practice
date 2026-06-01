@@ -1,11 +1,13 @@
 # 3740. Minimum Distance Between Three Equal Elements I
 
-# Problem: You are given an integer array nums.
+# Problem Summary: 
+You are given an integer array nums.
 A tuple (i, j, k) of 3 distinct indices is good if nums[i] == nums[j] == nums[k].
 The distance of a good tuple is abs(i - j) + abs(j - k) + abs(k - i), where abs(x) denotes the absolute value of x.
 Return an integer denoting the minimum possible distance of a good tuple. If no good tuples exist, return -1.
 
-# Approach Used: The solution keeps track of the first two occurrences and total count of each number using arrays. When a number appears for the third time (or later), the distance is calculated using the earliest valid triplet window and the answer os updated if it is smaller than the previous answer. The first and second occurrence indices are then shifted forward to continue checking future triplets efficiently.
+# Approach Used: 
+The solution keeps track of the first two occurrences and total count of each number using arrays. When a number appears for the third time (or later), the distance is calculated using the earliest valid triplet window and the answer os updated if it is smaller than the previous answer. The first and second occurrence indices are then shifted forward to continue checking future triplets efficiently.
 This allows solving the problem in linear time.
 
 # Steps:
