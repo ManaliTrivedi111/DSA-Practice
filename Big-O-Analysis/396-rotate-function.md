@@ -5,7 +5,8 @@ You are given an integer array nums of length n. For each clockwise rotation of 
 F(k) = 0 × arrk[0] + 1 × arrk[1] + 2 × arrk[2] + ... + (n - 1) × arrk[n - 1]
 Return the maximum value among all possible rotations.
 
-# Approach Used: The solution first calculates the total sum of all elements and the value of F(0). Then it uses the mathematical relation between consecutive rotations to compute the next rotate function in constant time instead of recalculating from scratch.
+# Approach Used: 
+The solution first calculates the total sum of all elements and the value of F(0). Then it uses the mathematical relation between consecutive rotations to compute the next rotate function in constant time instead of recalculating from scratch.
 
 # Steps:
 1) Calculate the total sum of all array elements  
