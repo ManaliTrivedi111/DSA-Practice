@@ -1,8 +1,10 @@
 # 867. Transpose Matrix
 
-# Problem Summary: Given a 2D integer array matrix of size m x n, return its transpose. The transpose of a matrix is formed by flipping the matrix over its main diagonal, meaning rows become columns and columns become rows. For every element at position matrix[i][j], it is placed at position trans[j][i] in the transposed matrix.
+# Problem Summary: 
+Given a 2D integer array matrix of size m x n, return its transpose. The transpose of a matrix is formed by flipping the matrix over its main diagonal, meaning rows become columns and columns become rows. For every element at position matrix[i][j], it is placed at position trans[j][i] in the transposed matrix.
 
-# Approach Used: The solution first creates a new matrix with reversed dimensions: n x m. It then traverses every element of the original matrix using two nested loops. For each element: matrix[i][j], it stores the value in: trans[j][i]. This effectively swaps row and column indices and constructs the transpose matrix.
+# Approach Used: 
+The solution first creates a new matrix with reversed dimensions: n x m. It then traverses every element of the original matrix using two nested loops. For each element: matrix[i][j], it stores the value in: trans[j][i]. This effectively swaps row and column indices and constructs the transpose matrix.
 
 # Steps:
 1) Find the number of rows (m)
