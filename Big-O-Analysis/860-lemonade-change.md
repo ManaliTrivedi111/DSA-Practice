@@ -1,8 +1,10 @@
 # 860. Lemonade Change
 
-# Problem Summary: At a lemonade stand, each lemonade costs $5. Customers are standing in a queue to buy from you and order one at a time in the order specified by the array bills. Each customer pays using either a $5, $10, or $20 bill. The goal is to determine whether correct change can be provided to every customer so that each lemonade effectively costs $5. Initially, no change is available.
+# Problem Summary: 
+At a lemonade stand, each lemonade costs $5. Customers are standing in a queue to buy from you and order one at a time in the order specified by the array bills. Each customer pays using either a $5, $10, or $20 bill. The goal is to determine whether correct change can be provided to every customer so that each lemonade effectively costs $5. Initially, no change is available.
 
-# Approach Used: The solution keeps track of the number of $5 and $10 bills available while processing each customer one by one.
+# Approach Used: 
+The solution keeps track of the number of $5 and $10 bills available while processing each customer one by one.
 If a customer pays with $5, no change is required.
 If a customer pays with $10, one $5 bill must be given as change.
 If a customer pays with $20, the solution prioritizes giving one $10 bill and one $5 bill as change because it preserves more $5 bills for future transactions. If that is not possible, three $5 bills are used instead.
