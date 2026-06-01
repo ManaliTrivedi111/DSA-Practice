@@ -1,8 +1,10 @@
 # 812. Largest Triangle Area
 
-# Problem Summary: Given an array of points on the X-Y plane points where points[i] = [xi, yi], return the area of the largest triangle that can be formed by any three different points. Answers within 10^-5 of the actual answer will be accepted.
+# Problem Summary: 
+Given an array of points on the X-Y plane points where points[i] = [xi, yi], return the area of the largest triangle that can be formed by any three different points. Answers within 10^-5 of the actual answer will be accepted.
 
-# Approach Used: The solution checks every possible combination of three different points and calculates the area of the triangle formed by them using the cross-product formula. For each triplet, two vectors are formed from the same starting point, and their cross product gives twice the area of the triangle. The absolute value is taken because area cannot be negative, and the result is divided by 2. The maximum area found during traversal is stored and returned at the end.
+# Approach Used: 
+The solution checks every possible combination of three different points and calculates the area of the triangle formed by them using the cross-product formula. For each triplet, two vectors are formed from the same starting point, and their cross product gives twice the area of the triangle. The absolute value is taken because area cannot be negative, and the result is divided by 2. The maximum area found during traversal is stored and returned at the end.
 
 # Steps:
 1) Store the number of points
