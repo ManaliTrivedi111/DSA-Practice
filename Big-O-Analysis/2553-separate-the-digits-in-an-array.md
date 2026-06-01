@@ -1,8 +1,10 @@
 # 2553. Separate the Digits in an Array
 
-# Problem Summary: You are given an array of positive integers nums. Return an array containing all the digits of every integer in nums in the same order they appear. For example, if nums contains 10921, its digits should appear as: [1, 0, 9, 2, 1]
+# Problem Summary: 
+You are given an array of positive integers nums. Return an array containing all the digits of every integer in nums in the same order they appear. For example, if nums contains 10921, its digits should appear as: [1, 0, 9, 2, 1]
 
-# Approach Used: The solution first converts each number into a character array and stores it. At the same time, it calculates the total number of digits required for the final answer array. Then, it traverses all stored character arrays, converts each character digit into an integer digit, and fills the final result array in order.
+# Approach Used: 
+The solution first converts each number into a character array and stores it. At the same time, it calculates the total number of digits required for the final answer array. Then, it traverses all stored character arrays, converts each character digit into an integer digit, and fills the final result array in order.
 
 # Steps:
 1) Create a 2D character array to store digits of each number  
