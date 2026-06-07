@@ -39,12 +39,7 @@ class Solution {
 ```
 
 # Time Complexity:
-T(n) = O(1) + O(1) + O(1) + O(n) + O(n) + O(1)
-     = O(4 + 2n)
-     = O(2n) // Ignore smaller constant term
-     = O(n)  // Drop constant multiplier
+T(n) = O(n)
 
 # Space Complexity:
-S(n) = O(1) + O(1) + O(1) + O(1)
-     = O(4)
-     = O(1) //Drop constant multiplier
+S(n) = O(1) 
