@@ -15,10 +15,10 @@ The solution compares colors from both ends of the array, calculates maximum dis
 5) Return the maximum of the two distances
 
 # Solution:
+```
 class Solution {
 
     public int maxDistance(int[] colors) {
-    
         final int n = colors.length;   // T(n) = O(1), S(n) = O(1)
         int i = 0;                     // T(n) = O(1), S(n) = O(1)
         int j = n - 1;                 // T(n) = O(1), S(n) = O(1)
@@ -36,6 +36,7 @@ class Solution {
         return Math.max(n - 1 - i, j); // T(n) = O(1), S(n) = O(1)
     }
 }
+```
 
 # Time Complexity:
 T(n) = O(1) + O(1) + O(1) + O(n) + O(n) + O(1)
