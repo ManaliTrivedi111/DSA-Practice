@@ -27,7 +27,7 @@ This pattern repeats until all candies are processed.
 6) Return the total minimum cost
 
 # Solution:
-
+```
 class Solution {
 
 	public int minimumCost(int[] cost) {
@@ -65,6 +65,7 @@ class Solution {
     		return totalCost;                          // T(n) = O(1)
 	}
 }
+```
 
 # Time Complexity:
 T(n) = O(n)
