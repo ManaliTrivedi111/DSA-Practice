@@ -18,6 +18,7 @@ The solution first converts each number into a character array and stores it. At
 9) Return the final answer array
 
 # Solution:
+```
 class Solution {
 
     public int[] separateDigits(int[] nums) {
@@ -43,6 +44,7 @@ class Solution {
         return ans;                                             // T(n) = O(1)
     }
 }
+```
 
 # Time Complexity:
 Let d be the total number of digits across all numbers and n be the number of integers in nums.
