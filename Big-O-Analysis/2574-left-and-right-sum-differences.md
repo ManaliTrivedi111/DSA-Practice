@@ -26,6 +26,7 @@ This allows both left and right sums to be maintained dynamically using only two
 6) Return the answer array
 
 # Solution:
+```
 class Solution {
 
     public int[] leftRightDifference(int[] nums) {
@@ -49,6 +50,7 @@ class Solution {
         return ans;                                 // T(n) = O(1)
     }
 }
+```
 
 # Time Complexity:
 T(n) = O(n)
