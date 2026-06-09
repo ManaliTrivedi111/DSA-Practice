@@ -41,6 +41,7 @@ The minimum finish time across both ride orders is returned.
 6) Return the minimum finish time
 
 # Solution:
+```
 class Solution {
 
     public int earliestFinishTime(int[] landStartTime, int[] landDuration, int[] waterStartTime, int[] waterDuration) {
@@ -75,6 +76,7 @@ class Solution {
     		return minFinishTime;                         			    // T(n) = O(1)
 	  }
 }
+```
 
 # Time Complexity:
 T(m, n) = O(m + n)
