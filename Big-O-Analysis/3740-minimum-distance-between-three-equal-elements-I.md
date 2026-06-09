@@ -23,6 +23,7 @@ This allows solving the problem in linear time.
 7) Return the minimum distance found, otherwise return -1
 
 # Solution:
+```
 class Solution {
 
     public int minimumDistance(int[] nums) {
@@ -51,6 +52,7 @@ class Solution {
         return answer == Integer.MAX_VALUE ? -1 : answer;       // T(n) = O(1)
     }
 }
+```
 
 # Time Complexity:
 T(n) = O(1) + O(n) + O(n) + O(n) + O(1) + O(n) + O(n) + O(n) + O(n) + O(n) + O(1)
