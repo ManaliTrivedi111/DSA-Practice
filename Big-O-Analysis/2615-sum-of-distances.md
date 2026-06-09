@@ -26,6 +26,7 @@ The idea is to group all indices having the same value in nums. For each group, 
 8) Return the answer array
 
 # Solution One: 
+```
 class Solution {
 
     public long[] distance(int[] nums) {
@@ -73,6 +74,7 @@ class Solution {
         return answer;                                            // T(n) = O(1)
     }
 }
+```
 
 # Time Complexity:
 T(n) = O(1) + O(1) + O(n) + O(n) + O(n) + O(n) + O(k) + O(k) + O(k) + O(n) + O(n) + O(n) + O(n) + O(n) + O(1)
