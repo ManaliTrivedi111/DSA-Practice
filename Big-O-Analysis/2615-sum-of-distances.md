@@ -118,6 +118,7 @@ The solution uses a hashmap where each number stores a helper object containing 
 12) Return answer array
 
 # Solution:
+```
 class Solution {
 
     private class Data {
@@ -160,6 +161,7 @@ class Solution {
         return answer;                                           // T(n) = O(1)
     }
 }
+```
 
 # Time Complexity:
 T(n) = O(1) + O(1) + O(1) + O(1) + O(n) + O(n) + O(k) + O(n) + O(n) + O(n) + O(n) + O(n) + O(n) + O(n) + O(n) + O(n) + O(1)
