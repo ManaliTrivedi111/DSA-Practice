@@ -34,6 +34,7 @@ The waviness of each number is added to the final result.
 6) Return the total waviness
 
 # Solution:
+```
 class Solution {
 
     public int totalWaviness(int num1, int num2) {
@@ -65,6 +66,7 @@ class Solution {
         return result;                              // T(n) = O(1)
     }
 }
+```
 
 # Time Complexity:
 Let:
