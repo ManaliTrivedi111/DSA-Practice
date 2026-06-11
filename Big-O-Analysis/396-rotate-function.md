@@ -23,23 +23,23 @@ class Solution {
 
     public int maxRotateFunction(int[] nums) {
 
-        final int n = nums.length;      // T(n) = O(1), S(n) = O(1)
-        int sum = 0;                   // T(n) = O(1), S(n) = O(1)
-        int func = 0;                  // T(n) = O(1), S(n) = O(1)
+        final int n = nums.length;          // T(n) = O(1), S(n) = O(1)
+        int sum = 0;                        // T(n) = O(1), S(n) = O(1)
+        int func = 0;                       // T(n) = O(1), S(n) = O(1)
 
         for(int i = 0; i < n; i++) {
-            sum += nums[i];            // T(n) = O(1) per iteration = O(n)
-            func += nums[i] * i;      // T(n) = O(1) per iteration = O(n)
+            sum += nums[i];                 // T(n) = O(1) per iteration = O(n)
+            func += nums[i] * i;            // T(n) = O(1) per iteration = O(n)
         }
 
-        int ans = func;               // T(n) = O(1), S(n) = O(1)
+        int ans = func;                     // T(n) = O(1), S(n) = O(1)
 
         for(int i = n - 1; i >= 0; i--) {
-            func += sum - n * nums[i]; // T(n) = O(1) per iteration = O(n)
-            ans = Math.max(ans, func); // T(n) = O(1) per iteration = O(n)
+            func += sum - n * nums[i];      // T(n) = O(1) per iteration = O(n)
+            ans = Math.max(ans, func);      // T(n) = O(1) per iteration = O(n)
         }
 
-        return ans;                  // T(n) = O(1)
+        return ans;                         // T(n) = O(1)
     }
 }
 ```
