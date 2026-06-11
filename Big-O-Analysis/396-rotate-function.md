@@ -18,6 +18,7 @@ The solution first calculates the total sum of all elements and the value of F(0
 7) Return the maximum value found
 
 # Solution:
+```
 class Solution {
 
     public int maxRotateFunction(int[] nums) {
@@ -41,6 +42,7 @@ class Solution {
         return ans;                  // T(n) = O(1)
     }
 }
+```
 
 # Time Complexity:
 T(n) = O(1) + O(1) + O(1) + O(n) + O(n) + O(1) + O(n) + O(n) + O(1)
