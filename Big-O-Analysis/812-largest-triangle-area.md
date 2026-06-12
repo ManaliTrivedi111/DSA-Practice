@@ -17,6 +17,7 @@ The solution checks every possible combination of three different points and cal
 8) Return the maximum area found
 
 # Solution:
+```
 class Solution {
 
     public double largestTriangleArea(int[][] points) {
@@ -50,7 +51,7 @@ class Solution {
         return ans;                                                           // T(n) = O(1)
     }
 }
-
+```
 # Time Complexity:
 T(n) = O(1) + O(1) + O(n(n - 1)(n - 2) / 6) + O(1)
      = O(3 + n3) // Keep dominant term only
