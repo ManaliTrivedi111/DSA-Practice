@@ -14,6 +14,7 @@ The solution checks whether every element matches the element diagonally above-l
 5) If all diagonal elements match -> return true
 
 # Solution:
+```
 class Solution {
 
     public boolean isToeplitzMatrix(int[][] matrix) {
@@ -33,7 +34,7 @@ class Solution {
         return true;                                        // T(n) = O(1)
     }
 }
-
+```
 # Time Complexity:
 
 T(n) = O(1) + O(1) + O((m - 1) * (n - 1)) + O(1)
