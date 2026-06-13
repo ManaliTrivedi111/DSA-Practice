@@ -21,6 +21,7 @@ The solution processes each row independently using the two-pointer technique. O
 8) Return the modified image
 
 # Solution:
+```
 class Solution {
 
     public int[][] flipAndInvertImage(int[][] image) {
@@ -50,6 +51,7 @@ class Solution {
         return image;                                         // T(n) = O(1)
     }
 }
+```
 
 # Time Complexity:
 T(n) = O(n^2)
