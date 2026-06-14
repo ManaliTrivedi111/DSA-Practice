@@ -47,7 +47,7 @@ class Solution {
 
     		// Outer loop runs n times
     		for(int i = 0; i < n; i++) {
-        		int maxRowVal = 0;                                           n// T(n) = O(1), S(n) = O(1)
+        		int maxRowVal = 0;                                            // T(n) = O(1), S(n) = O(1)
         		int maxColumnVal = 0;                                         // T(n) = O(1), S(n) = O(1)
 
         		// Inner loop runs n times for each outer loop iteration
