@@ -38,7 +38,7 @@ The sum of all these values gives the total projection area.
 9) Return the final area
 
 # Solution:
-
+```
 class Solution {
 
 	public int projectionArea(int[][] grid) {
@@ -47,8 +47,8 @@ class Solution {
 
     		// Outer loop runs n times
     		for(int i = 0; i < n; i++) {
-        		int maxRowVal = 0;                                           // T(n) = O(1), S(n) = O(1)
-        		int maxColumnVal = 0;                                        // T(n) = O(1), S(n) = O(1)
+        		int maxRowVal = 0;                                           n// T(n) = O(1), S(n) = O(1)
+        		int maxColumnVal = 0;                                         // T(n) = O(1), S(n) = O(1)
 
         		// Inner loop runs n times for each outer loop iteration
         		for(int j = 0; j < n; j++) {	
@@ -58,12 +58,13 @@ class Solution {
             			maxRowVal = Math.max(maxRowVal, grid[i][j]);           // T(n) = O(1) per execution, total executions = O(n²)
             			maxColumnVal = Math.max(maxColumnVal, grid[j][i]);     // T(n) = O(1) per execution, total executions = O(n²)
         		}
-        		area += maxRowVal + maxColumnVal;                            // T(n) = O(1) per execution, total executions = O(n)
+        		area += maxRowVal + maxColumnVal;                              // T(n) = O(1) per execution, total executions = O(n)
     		}
-    		return area;                                                     // T(n) = O(1)
+    		return area;                                                       // T(n) = O(1)
 	}
 
 }
+```
 
 # Time Complexity:
 T(n) = O(n²)
