@@ -29,6 +29,7 @@ If correct change cannot be provided at any point, the method immediately return
 6) If all customers are processed successfully -> return true
 
 # Solution:
+```
 class Solution {
 
     public boolean lemonadeChange(int[] bills) {
@@ -74,6 +75,7 @@ class Solution {
         return true;                                          // T(n) = O(1)
     }
 }
+```
 
 # Time Complexity:
 T(n) = O(n)
