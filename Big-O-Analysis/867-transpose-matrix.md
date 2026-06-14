@@ -16,7 +16,7 @@ The solution first creates a new matrix with reversed dimensions: n x m. It then
 6) Return the transposed matrix
 
 # Solution:
-
+```
 class Solution {
 
 	  public int[][] transpose(int[][] matrix) {
@@ -36,6 +36,7 @@ class Solution {
     		return trans;                                         // T(n) = O(1)
 	  }
 }
+```
 
 # Time Complexity:
 T(n) = O(m * n)
