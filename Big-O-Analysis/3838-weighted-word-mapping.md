@@ -9,14 +9,14 @@ Return a string formed by concatenating the mapped character for every word in t
 
 # Approach Used:
 The solution processes each word independently. For a given word:
--> Traverse all its characters.
--> Use the weights array to obtain the weight of each character.
--> Compute the total weight of the word.
--> Take the total modulo 26.
--> Convert the resulting value into the corresponding reverse-alphabetical character.
+* Traverse all its characters.
+* Use the weights array to obtain the weight of each character.
+* Compute the total weight of the word.
+* Take the total modulo 26.
+* Convert the resulting value into the corresponding reverse-alphabetical character.
 The mapping is performed using ASCII values:
--> 'z' has ASCII value 122.
--> Therefore, the mapped character can be computed as: 122 − (wordWeight % 26)
+* 'z' has ASCII value 122.
+* Therefore, the mapped character can be computed as: 122 − (wordWeight % 26)
 The resulting character is appended to a StringBuilder. After all words have been processed, the final string is returned.
 
 # Steps:
