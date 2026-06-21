@@ -23,11 +23,11 @@ The resulting character is appended to a StringBuilder. After all words have bee
 1) Create a StringBuilder to store the result
 2) Traverse each word in the words array
 3) For the current word:
-   -> Initialize a running sum to 0
-   -> Traverse all characters
-   -> Add the corresponding character weight to the sum
+   * Initialize a running sum to 0
+   * Traverse all characters
+   * Add the corresponding character weight to the sum
 4) Compute:
-   -> sum % 26
+   * sum % 26
 5) Convert the result into a reverse-alphabetical character
 6) Append the character to the StringBuilder
 7) Return the final string
@@ -61,12 +61,12 @@ class Solution {
 
 # Time Complexity:
 Let:
--> n = number of words
--> L = total number of characters across all words
+* n = number of words
+* L = total number of characters across all words
 T(n, L) = O(L)
 
 # Space Complexity:
 Let:
--> n = number of words (output size)
--> m = length of the longest word
+* n = number of words (output size)
+* m = length of the longest word
 S(n) = O(m)
