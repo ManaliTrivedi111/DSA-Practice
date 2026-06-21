@@ -63,10 +63,12 @@ class Solution {
 Let:
 * n = number of words
 * L = total number of characters across all words
+
 T(n, L) = O(L)
 
 # Space Complexity:
 Let:
 * n = number of words (output size)
 * m = length of the longest word
+
 S(n) = O(m)
