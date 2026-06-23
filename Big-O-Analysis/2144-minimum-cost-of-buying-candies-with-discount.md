@@ -17,10 +17,10 @@ This pattern repeats until all candies are processed.
 2) Traverse the input array and populate the frequency array
 3) Start processing costs from 100 down to 1
 4) For each available candy:
-   -> If fewer than two candies have been purchased in the current group:
+   * If fewer than two candies have been purchased in the current group:
       Add its cost to the total
       Increase the purchased count
-   -> Otherwise:
+   * Otherwise:
       Treat it as the free candy
       Reset the purchased count
 5) Continue until all candies are processed
