@@ -2,29 +2,29 @@
 
 # Problem Summary:
 You are given a 2D array descriptions where: descriptions[i] = [parent, child, isLeft] indicates that:
--> parent is the parent node.
--> child is the child node.
--> If isLeft is 1, the child is the left child.
--> If isLeft is 0, the child is the right child.
+1. parent is the parent node.
+2. child is the child node.
+3. If isLeft is 1, the child is the left child.
+4. If isLeft is 0, the child is the right child.
 All node values are unique, and the input is guaranteed to describe a valid binary tree. Return the root of the constructed binary tree.
 
 # Approach Used:
 The solution uses an array to store references to TreeNode objects based on their values.
 The construction is performed in two passes:
-1) Create TreeNode objects for all child nodes.
-2) Traverse the descriptions again and connect each child to its parent.
+1. Create TreeNode objects for all child nodes.
+2. Traverse the descriptions again and connect each child to its parent.
 Only the root node will not already exist in the array after the first pass, because every child node is created beforehand. Therefore, during the second pass, if a parent reference is null, that parent must be the root node; it is then created, stored in the array, and returned at the end.
 
 # Steps:
 1) Create an array to store TreeNode references indexed by node value
 2) Traverse all descriptions
-  -> Create a TreeNode for every child value
-3) Traverse all descriptions again
-4) For each description:
-   -> Retrieve the parent node
-   -> If it does not exist, create it and store it
-   -> Connect the child node as either the left or right child
-5) Return the root node
+   * Create a TreeNode for every child value
+4) Traverse all descriptions again
+5) For each description:
+   * Retrieve the parent node
+   * If it does not exist, create it and store it
+   * Connect the child node as either the left or right child
+6) Return the root node
 
 # Solution:
 ```
