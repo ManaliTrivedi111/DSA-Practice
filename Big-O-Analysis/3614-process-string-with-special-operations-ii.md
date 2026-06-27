@@ -2,9 +2,9 @@
 
 # Problem Summary:
 You are given a string s consisting of lowercase English letters and the special characters:
--> '*' : removes the last character from the current result, if it exists
--> '#' : duplicates the current result and appends it to itself
--> '%' : reverses the current result
+1. '*' : removes the last character from the current result, if it exists
+2. '#' : duplicates the current result and appends it to itself
+3. '%' : reverses the current result
 The string is processed from left to right to build a final result string. You are also given an integer k. Return the kth character of the final result string. If k is outside the bounds of the final string, return '.'.
 
 # Approach Used:
@@ -12,41 +12,41 @@ Constructing the final string directly is not feasible because the '#' operation
 
 1) Calculate the Final Length
 Traverse the string from left to right and compute only the length of the resulting string after each operation.
--> Letters increase the length by 1.
--> '*' decreases the length by 1 if the current length is greater than 0.
--> '#' doubles the current length.
--> '%' does not change the length.
+* Letters increase the length by 1.
+* '*' decreases the length by 1 if the current length is greater than 0.
+* '#' doubles the current length.
+* '%' does not change the length.
 
 After processing all characters if k is greater than or equal to the final length, return '.' immediately.
 
 2) Reverse the Operations
 Starting from the end of the input string, trace backwards to determine which original character occupies position k. Instead of reconstructing the string, each operation is reversed:
 For '#':
--> The string was duplicated.
--> If k lies in the second half, map it back to the corresponding position in the first half.
--> Then halve the length.
+* The string was duplicated.
+* If k lies in the second half, map it back to the corresponding position in the first half.
+* Then halve the length.
 For '%':
--> The string was reversed.
--> Convert k to its position before the reversal.
+* The string was reversed.
+* Convert k to its position before the reversal.
 For '*':
--> A character had been removed.
--> Restore the previous length.
+* A character had been removed.
+* Restore the previous length.
 For a letter:
--> If k points to the last character of the current string, that letter is the answer.
--> Otherwise, remove the letter from consideration and continue.
+* If k points to the last character of the current string, that letter is the answer.
+* Otherwise, remove the letter from consideration and continue.
 
 This allows the solution to identify the kth character without ever building the final string.
 
 # Steps:
 1) Traverse the string from left to right and calculate the final length
 2) If k is outside the final length:
-   -> Return '.'
+   * Return '.'
 3) Traverse the string from right to left
 4) Reverse each operation:
-   -> '*' restores one deleted position
-   -> '#' maps k back into the original half and halves the length
-   -> '%' converts k to its position before reversal
-   -> Letters are checked to determine whether they correspond to position k
+   * '*' restores one deleted position
+   *  '#' maps k back into the original half and halves the length
+   * '%' converts k to its position before reversal
+   * Letters are checked to determine whether they correspond to position k
 5) Return the matching character when found
 6) If no character is found, return '.'
 
