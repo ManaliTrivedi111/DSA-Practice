@@ -4,12 +4,12 @@
 A tourist must take exactly one land ride and one water ride, in any order.
 
 For each land ride:
--> landStartTime[i] represents the earliest time the ride can be started.
--> landDuration[i] represents how long the ride lasts.
+* landStartTime[i] represents the earliest time the ride can be started.
+* landDuration[i] represents how long the ride lasts.
 
 For each water ride:
--> waterStartTime[j] represents the earliest time the ride can be started.
--> waterDuration[j] represents how long the ride lasts.
+* waterStartTime[j] represents the earliest time the ride can be started.
+* waterDuration[j] represents how long the ride lasts.
 
 A ride can be started at its opening time or any later time. After finishing the first ride, the tourist may immediately board the second ride if it is already open, otherwise they must wait until it opens. Return the earliest possible time at which both rides can be completed.
 
@@ -22,21 +22,21 @@ For the first order, only the earliest possible finishing time among all land ri
 Similarly, for the second order, only the earliest possible finishing time among all water rides matters. Once that minimum water finish time is known, every land ride can be considered as the second ride.
 
 For each possible second ride:
--> If the ride has already opened when the first ride finishes, it can start immediately.
--> Otherwise, the tourist waits until the ride opens.
+* If the ride has already opened when the first ride finishes, it can start immediately.
+* Otherwise, the tourist waits until the ride opens.
 
 This starting time is calculated using: maximum(firstRideFinishTime, secondRideStartTime)
 The minimum finish time across both ride orders is returned.
 
 # Steps:
 1) Find the minimum finishing time among all land rides
-   -> landStartTime[i] + landDuration[i]
+   * landStartTime[i] + landDuration[i]
 2) Find the minimum finishing time among all water rides
-   -> waterStartTime[i] + waterDuration[i]
+   * waterStartTime[i] + waterDuration[i]
 3) Consider every water ride as the second ride
-   -> Calculate the finish time for the order: Land Ride -> Water Ride
+   * Calculate the finish time for the order: Land Ride -> Water Ride
 4) Consider every land ride as the second ride
-   -> Calculate the finish time for the order: Water Ride -> Land Ride
+   * Calculate the finish time for the order: Water Ride -> Land Ride
 5) Track the minimum finish time obtained from both cases
 6) Return the minimum finish time
 
