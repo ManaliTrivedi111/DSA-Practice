@@ -3,11 +3,11 @@
 # Problem Summary:
 A tourist must experience exactly one land ride and one water ride, in any order.
 For each land ride:
--> landStartTime[i] represents the earliest time the ride can be boarded.
--> landDuration[i] represents the duration of the ride.
+* landStartTime[i] represents the earliest time the ride can be boarded.
+* landDuration[i] represents the duration of the ride.
 For each water ride:
--> waterStartTime[j] represents the earliest time the ride can be boarded.
--> waterDuration[j] represents the duration of the ride.
+* waterStartTime[j] represents the earliest time the ride can be boarded.
+* waterDuration[j] represents the duration of the ride.
 A ride can be started at its opening time or any later time. After completing the first ride, the tourist may immediately board the second ride if it is already open; otherwise, they must wait until it opens. Return the earliest possible time at which both rides can be completed.
 
 # Approach Used:
@@ -16,22 +16,20 @@ The solution considers both possible ride orders:
 2) Water Ride -> Land Ride
 For the first order, only the earliest finishing land ride matters. Once the tourist finishes the earliest possible land ride, every water ride can be considered as the second ride. Similarly, for the second order, only the earliest finishing water ride matters. Once the tourist finishes the earliest possible water ride, every land ride can be considered as the second ride.
 For each possible second ride:
--> If the ride has already opened when the first ride finishes, it can start immediately.
--> Otherwise, the tourist must wait until the ride opens.
+* If the ride has already opened when the first ride finishes, it can start immediately.
+* Otherwise, the tourist must wait until the ride opens.
 The starting time of the second ride is therefore: maximum(firstRideFinishTime, secondRideStartTime)
 The minimum finish time obtained from both ride orders is returned.
 
 # Steps:
 1) Find the earliest finishing time among all land rides
-   -> landStartTime[i] + landDuration[i]
+   * landStartTime[i] + landDuration[i]
 2) Find the earliest finishing time among all water rides
-   -> waterStartTime[i] + waterDuration[i]
+   * waterStartTime[i] + waterDuration[i]
 3) Consider every water ride as the second ride
-   -> Calculate the finish time for: 
-      Land Ride -> Water Ride
+   * Calculate the finish time for: Land Ride -> Water Ride
 4) Consider every land ride as the second ride
-   -> Calculate the finish time for:
-      Water Ride → Land Ride
+   * Calculate the finish time for: Water Ride -> Land Ride
 5) Track the minimum finish time across all possibilities
 6) Return the minimum finish time
 
