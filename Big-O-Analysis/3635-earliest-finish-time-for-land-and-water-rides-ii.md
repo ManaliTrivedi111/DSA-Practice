@@ -12,8 +12,8 @@ A ride can be started at its opening time or any later time. After completing th
 
 # Approach Used:
 The solution considers both possible ride orders:
-1) Land Ride -> Water Ride
-2) Water Ride -> Land Ride
+1. Land Ride -> Water Ride
+2. Water Ride -> Land Ride
 For the first order, only the earliest finishing land ride matters. Once the tourist finishes the earliest possible land ride, every water ride can be considered as the second ride. Similarly, for the second order, only the earliest finishing water ride matters. Once the tourist finishes the earliest possible water ride, every land ride can be considered as the second ride.
 For each possible second ride:
 * If the ride has already opened when the first ride finishes, it can start immediately.
