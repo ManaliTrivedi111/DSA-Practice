@@ -55,13 +55,7 @@ class Solution {
 ```
 
 # Time Complexity:
-T(n) = O(1) + O(n) + O(n) + O(n) + O(1) + O(n) + O(n) + O(n) + O(n) + O(n) + O(1)
-     = O(3 + 8n)
-     = O(8n) // Ignore smaller constant term
-     = O(n) // Drop constant multiplier
+T(n) = O(n)
      
 # Space Complexity:
-S(n) = O(1) + O(n) + O(n) + O(n) + O(1) + O(1)
-     = O(3 + 3n)
-     = O(3n) // Ignore smaller constant term
-     = O(n) // Drop constant multiplier
+S(n) = O(n)
