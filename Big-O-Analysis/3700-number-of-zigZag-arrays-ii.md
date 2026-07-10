@@ -153,8 +153,8 @@ Let:
 * m = r - l + 1 be the number of distinct values.
 * s = 2m be the number of states.
 
-S(n) = O(s²)
+S(n) = O(s^2)
 
 Since s = 2m, this is equivalently:
 
-S(n) = O(m²)
+S(n) = O(m^2)
