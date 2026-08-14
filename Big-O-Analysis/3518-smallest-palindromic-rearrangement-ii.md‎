@@ -1,0 +1,152 @@
+# 3518. Smallest Palindromic Rearrangement II
+
+# Problem Summary:
+
+You are given a palindromic string s and an integer k. Return the k-th lexicographically smallest palindromic permutation of s. If there are fewer than k distinct palindromic permutations, return an empty string. Different rearrangements that produce the same palindrome are counted only once.
+
+# Approach Used:
+
+A palindrome is completely determined by its left half and, when the length is odd, its middle character.
+
+For example, if the left half is aab and the middle character is c, the complete palindrome must be: aabcb aa
+More generally: leftHalf + middle + reverse(leftHalf)
+Therefore, instead of generating all palindromic permutations, we only need to find the k-th lexicographically smallest arrangement of the characters in the left half.
+
+The number of distinct arrangements of characters with frequencies count1, count2, ... is: total! / (count1! * count2! * ...)
+
+The solution uses this formula to determine how many arrangements are possible after choosing each candidate character.
+
+For every position in the left half:
+1. Try the available characters from 'a' to 'z' in lexicographical order.
+2. Temporarily place the candidate character by decreasing its frequency.
+3. Calculate how many distinct arrangements can be formed from the remaining characters.
+4. If that number is at least k, the candidate character is part of the answer.
+5. Otherwise, all those arrangements can be skipped, so subtract their count from k and restore the character's frequency.
+6. Continue until the entire left half has been constructed.
+
+The solution caps the number of arrangements at 1,000,001 because we only need to know whether the number of arrangements is at least k.
+
+# Steps:
+
+1. Convert the string to a character array.
+2. Store the middle character if the string length is odd.
+3. Count the characters in the first half of the palindrome.
+4. Calculate the total number of distinct arrangements of the left half.
+5. If the total number of arrangements is smaller than k, return "".
+6. Construct the left half one position at a time.
+7. For each position, try available characters from 'a' to 'z'.
+8. Calculate the number of arrangements that would follow each candidate.
+9. If that number is smaller than k, subtract it from k and try the next candidate.
+10. Otherwise, keep that candidate and move to the next position.
+11. Construct the complete palindrome using: leftHalf + middle + reverse(leftHalf)
+
+# Solution:
+
+```
+class Solution {
+    private static final int MAX = 1_000_001;                               // T(n) = O(1), S(n) = O(1)
+
+    public String smallestPalindrome(String s, int k) {
+        char[] str = s.toCharArray();                                       // T(n) = O(n), S(n) = O(n)
+        int n = str.length;                                                 // T(n) = O(1), S(n) = O(1)
+        String middle = n % 2 != 0 ? String.valueOf(str[n / 2]) : "";       // T(n) = O(1), S(n) = O(1)
+        n /= 2;                                                             // T(n) = O(1), S(n) = O(1)
+        int[] count = new int[26];                                          // T(n) = O(1), S(n) = O(1)
+
+        for(int i = 0; i < n; i++) {
+            count[str[i] - 'a']++;                                          // T(n) = O(1)
+        }
+
+        int totalPerm = calculateTotalPermutations(count);                  // T(n) = O(n)
+
+        if(k > totalPerm) {
+            return "";                                                      // T(n) = O(1)
+        }
+
+        StringBuilder leftHalf = generateLeftHalf(count, k);                // T(n) = O(n^2), S(n) = O(n)
+        StringBuilder ans = new StringBuilder();                            // T(n) = O(1), S(n) = O(n)
+        ans.append(leftHalf);                                               // T(n) = O(n)
+        ans.append(middle);                                                 // T(n) = O(n)
+        ans.append(new StringBuilder(leftHalf).reverse());                  // T(n) = O(n)
+        return ans.toString();                                              // T(n) = O(n)
+    }
+
+    private int calculateTotalPermutations(int[] halfCount) {
+        return countArrangements(halfCount);                                // T(n) = O(n)
+    }
+
+    private StringBuilder generateLeftHalf(int[] halfCount, int k) {
+        int halfLen = 0;                                                    // T(n) = O(1), S(n) = O(1)
+
+        for(int freq : halfCount) {
+            halfLen += freq;                                                // T(n) = O(1)
+        }
+
+        StringBuilder left = new StringBuilder();                           // T(n) = O(1), S(n) = O(n)
+
+        for(int pos = 0; pos < halfLen; pos++) {
+            for(int i = 0; i < 26; i++) {
+                if(halfCount[i] == 0) {
+                    continue;
+                }
+
+                halfCount[i]--;                                             // T(n) = O(1)
+                int arrangements = countArrangements(halfCount);            // T(n) = O(n)
+
+                if(arrangements >= k) {
+                    left.append((char) ('a' + i));                          // T(n) = O(1)
+                    break;
+                }
+
+                k -= arrangements;                                          // T(n) = O(1)
+                halfCount[i]++;                                             // T(n) = O(1)
+            }
+        }
+        return left;                                                        // T(n) = O(1)
+    }
+
+    private int countArrangements(int[] count) {
+        int total = 0;                                                      // T(n) = O(1), S(n) = O(1)
+        long res = 1;                                                       // T(n) = O(1), S(n) = O(1)
+
+        for(int freq : count) {
+            total += freq;                                                  // T(n) = O(1)
+        }
+
+        for(int freq : count) {
+            if(freq == 0) {
+                continue;
+            }
+
+            res *= nCk(total, freq);                                        // T(n) = O(n)
+
+            if(res >= MAX) {
+                return MAX;                                                 // T(n) = O(1)
+            }
+
+            total -= freq;                                                  // T(n) = O(1)
+        }
+        return (int) res;                                                   // T(n) = O(1)
+    }
+
+    private int nCk(int n, int k) {
+        long res = 1;                                                       // T(n) = O(1), S(n) = O(1)
+        k = Math.min(k, n - k);                                             // T(n) = O(1), S(n) = O(1)
+
+        for(int i = 1; i <= k; i++) {
+            res = res * (n - i + 1) / i;                                    // T(n) = O(1)
+
+            if(res >= MAX) {
+                return MAX;                                                 // T(n) = O(1)
+            }
+        }
+        return (int) res;                                                   // T(n) = O(1)
+    }
+}
+```
+
+# Time Complexity:
+T(n) = O(n^2)
+
+# Space Complexity:
+S(n) = O(n)
